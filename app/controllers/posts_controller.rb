@@ -2,15 +2,15 @@ class PostsController < ApplicationController
   before_action :set_post!, only: [:show, :edit, :update]
 
   def show
-    set_post
+    set_post!
   end
 
   def edit
-    set_post
+    set_post!
   end
 
   def update
-    set_post
+    set_post!
     @post.update(post_params)
     @post = Post.create(post_params)
       if @post.valid?
