@@ -10,11 +10,8 @@ class PostsController < ApplicationController
   end
 
   def update
-    binding.pry
-    set_post!
-    set_post!.save
     @post.update(post_params)
-    @post = Post.create(post_params)
+    binding.pry
       if @post.valid?
         @post.save
         redirect_to post_path(@post)
