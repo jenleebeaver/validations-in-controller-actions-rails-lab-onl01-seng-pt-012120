@@ -10,6 +10,8 @@ class PostsController < ApplicationController
   end
 
   def update
+    set_post
+    @post.update(post_params)
     @post = Post.create(post_params)
       if @post.valid?
         @post.save
